@@ -1,2 +1,2 @@
 # rebu
-app de transporte de passageiros
+app básico de transporte de passageiros
