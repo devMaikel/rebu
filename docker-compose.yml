@@ -1,19 +1,20 @@
 services:
-  # frontend:
-  #   build: ./frontend
-  #   ports:
-  #     - 80:80
-  #   platform: linux/x86_64
-  #   working_dir: /app-frontend
-  #   depends_on:
-  #     backend:
-  #       condition: service_healthy
-  #   # Os `healthcheck` devem garantir que a aplicação
-  #   # está operacional, antes de liberar o container
-  #   healthcheck:
-  #     test: ["CMD", "lsof", "-t", "-i:80"]  # Caso utilize outra porta interna para o front, altere ela aqui também
-  #     timeout: 10s
-  #     retries: 5
+  frontend:
+    container_name: app_front
+    build: ./frontend/rebu-front
+    ports:
+      - 80:80
+    platform: linux/x86_64
+    working_dir: /frontend/rebu-front
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - ./frontend/rebu-front:/frontend/rebu-front
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:80"]
+      timeout: 10s
+      retries: 5
   rebu-db:
     image: postgres:latest
     container_name: rebu-db
