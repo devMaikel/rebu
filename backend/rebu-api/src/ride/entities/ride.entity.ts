@@ -3,27 +3,27 @@ import { DriverEntity } from '../../driver/entities/driver.entity';
 
 @Entity('rides')
 export class RideEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    customer_id: string;
+  @Column()
+  customer_id: string;
 
-    @Column()
-    origin: string;
+  @Column()
+  origin: string;
 
-    @Column()
-    destination: string;
+  @Column()
+  destination: string;
 
-    @Column('float')
-    distance: number;
+  @Column('float')
+  distance: number;
 
-    @Column()
-    duration: string;
+  @Column()
+  duration: string;
 
-    @Column('float')
-    value: number;
+  @Column('float')
+  value: number;
 
-    @ManyToOne(() => DriverEntity, (driver) => driver.rides)
-    driver: DriverEntity;
+  @ManyToOne(() => DriverEntity, (driver) => driver.rides)
+  driver: DriverEntity;
 }

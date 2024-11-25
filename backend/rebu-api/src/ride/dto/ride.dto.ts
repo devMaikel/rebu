@@ -1,65 +1,51 @@
-import { IsJSON, IsNumber, IsString } from "class-validator";
-
 export class RideEstimateDto {
+  customer_id: string;
 
-    @IsString()
-    customer_id: string;
+  origin: string;
 
-    @IsString()
-    origin: string;
-
-    @IsString()
-    destination: string;
+  destination: string;
 }
 
 export class RideConfirmDto {
+  customer_id: string;
 
-    @IsString()
-    customer_id: string;
+  origin: string;
 
-    @IsString()
-    origin: string;
+  destination: string;
 
-    @IsString()
-    destination: string;
+  distance: number;
 
-    @IsNumber()
-    distance: number;
+  duration: string;
 
-    @IsString()
-    duration: string;
+  driver: {
+    id: number;
+    name: string;
+  };
 
-    @IsJSON()
-    driver: {
-        id: number;
-        name: string
-    };
-
-    @IsNumber()
-    value: number
+  value: number;
 }
 
 class LatLng {
-    latitude: number;
-    longitude: number;
-};
-
-class Location {
-    latLng: LatLng;
-};
-
-class RouteLeg {
-    startLocation: Location;
-    endLocation: Location;
-};
-
-class Duration {
-    seconds: string;
-    nanos: number;
+  latitude: number;
+  longitude: number;
 }
 
-export class RouteApiResponse {
-    legs: RouteLeg[];
-    distanceMeters: number;
-    duration: Duration; 
-};
+class Location {
+  latLng: LatLng;
+}
+
+class RouteLeg {
+  startLocation: Location;
+  endLocation: Location;
+}
+
+class Duration {
+  seconds: string;
+  nanos: number;
+}
+
+export class RideData {
+  legs: RouteLeg[];
+  distanceMeters: number;
+  duration: Duration;
+}

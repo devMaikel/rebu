@@ -48,6 +48,7 @@ services:
       - DB_HOST=rebu-db
       - DB_PORT=5432
       - DB_NAME=rebu
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
     volumes:
       - ./backend/rebu-api:/app-backend
     healthcheck:

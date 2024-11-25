@@ -6,7 +6,6 @@ import { RideModule } from './ride/ride.module';
 import { DbModule } from './db/db.module';
 import { ConfigModule } from '@nestjs/config';
 import { SeederModule } from './db/seeders/seeder.module';
-import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -17,7 +16,6 @@ import { UsersModule } from './users/users.module';
     RideModule,
     DbModule,
     SeederModule,
-    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService],
