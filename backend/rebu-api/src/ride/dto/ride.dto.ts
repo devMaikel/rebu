@@ -12,7 +12,7 @@ export class RideEstimateDto {
     destination: string;
 }
 
-export class RideCreateDto {
+export class RideConfirmDto {
 
     @IsString()
     customer_id: string;
@@ -38,3 +38,28 @@ export class RideCreateDto {
     @IsNumber()
     value: number
 }
+
+class LatLng {
+    latitude: number;
+    longitude: number;
+};
+
+class Location {
+    latLng: LatLng;
+};
+
+class RouteLeg {
+    startLocation: Location;
+    endLocation: Location;
+};
+
+class Duration {
+    seconds: string;
+    nanos: number;
+}
+
+export class RouteApiResponse {
+    legs: RouteLeg[];
+    distanceMeters: number;
+    duration: Duration; 
+};

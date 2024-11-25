@@ -96,7 +96,7 @@ export class  $npmConfigName1732393810837 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'driver_id',
+                        name: 'driverId',
                         type: 'int',
                         isNullable: false,
                     },
@@ -107,7 +107,7 @@ export class  $npmConfigName1732393810837 implements MigrationInterface {
         await queryRunner.createForeignKey(
             'rides',
             new TableForeignKey({
-                columnNames: ['driver_id'],
+                columnNames: ['driverId'],
                 referencedColumnNames: ['id'],
                 referencedTableName: 'drivers',
                 onDelete: 'CASCADE',
@@ -123,16 +123,3 @@ export class  $npmConfigName1732393810837 implements MigrationInterface {
         await queryRunner.dropTable('driver');
     }
 }
-
-    // {
-    // "customer_id": string,
-    // "origin": string,
-    // "destination": string,
-    // "distance": number,
-    // "duration": string,
-    // "driver": {
-    // "id": number,
-    // "name": string
-    // },
-    // "value": number
-    // }
