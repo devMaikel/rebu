@@ -3,4 +3,5 @@ WORKDIR /app-frontend
 COPY . .
 RUN npm install
 EXPOSE 80
-CMD [ "npm", "start"]
+# CMD [ "npm", "run", "prod"]
+CMD [ "npm", "run", "dev"]

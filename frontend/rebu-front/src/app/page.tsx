@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
+import { fetchEstimate } from "./service/requests";
 
 export default function Home() {
   const [userId, setUserId] = useState("");
@@ -10,10 +11,12 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("ID do Usuário:", userId);
-    console.log("Endereço de Origem:", origin);
-    console.log("Endereço de Destino:", destination);
-    alert("Estimativa enviada! Confira os valores no console.");
+    fetchEstimate({
+      customer_id: userId,
+      origin: origin,
+      destination: destination,
+    });
+    // alert("Estimativa enviada! Confira os valores no console.");
   };
 
   return (
@@ -21,41 +24,47 @@ export default function Home() {
       <h1 className={styles.title}>Rebu Transportes</h1>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <label htmlFor="userId" className={styles.label}>
-            ID do Usuário:
-          </label>
-          <input
-            type="text"
-            id="userId"
-            name="userId"
-            placeholder="Digite o ID do usuário"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-          />
+          <div className={styles.labelDiv}>
+            <label htmlFor="userId" className={styles.label}>
+              ID do Usuário:
+            </label>
+            <input
+              type="text"
+              id="userId"
+              name="userId"
+              placeholder="Digite o ID do usuário"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="origin" className={styles.label}>
-            Endereço de Origem:
-          </label>
-          <input
-            type="text"
-            id="origin"
-            name="origin"
-            placeholder="Digite o endereço de origem"
-            value={origin}
-            onChange={(e) => setOrigin(e.target.value)}
-          />
+          <div className={styles.labelDiv}>
+            <label htmlFor="origin" className={styles.label}>
+              Endereço de Origem:
+            </label>
+            <input
+              type="text"
+              id="origin"
+              name="origin"
+              placeholder="Digite o endereço de origem"
+              value={origin}
+              onChange={(e) => setOrigin(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="destination" className={styles.label}>
-            Endereço de Destino:
-          </label>
-          <input
-            type="text"
-            id="destination"
-            name="destination"
-            placeholder="Digite o endereço de destino"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
+          <div className={styles.labelDiv}>
+            <label htmlFor="destination" className={styles.label}>
+              Endereço de Destino:
+            </label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              placeholder="Digite o endereço de destino"
+              value={destination}
+              onChange={(e) => setDestination(e.target.value)}
+            />
+          </div>
 
           <button type="submit">Buscar</button>
         </form>

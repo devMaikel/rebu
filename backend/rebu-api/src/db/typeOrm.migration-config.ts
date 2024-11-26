@@ -1,10 +1,7 @@
 import { ConfigService } from '@nestjs/config';
-import { config } from 'dotenv';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { DriverEntity } from '../driver/entities/driver.entity';
 import { RideEntity } from '../ride/entities/ride.entity';
-
-config();
 
 const configService = new ConfigService();
 
