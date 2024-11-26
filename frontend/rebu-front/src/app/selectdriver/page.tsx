@@ -2,8 +2,8 @@ import React from "react";
 
 // import { Container } from './styles';
 
-const wtf: React.FC = () => {
+const SelectDriver: React.FC = () => {
   return <div>rsrs</div>;
 };
 
-export default wtf;
+export default SelectDriver;

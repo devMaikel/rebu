@@ -3,19 +3,24 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import { fetchEstimate } from "./service/requests";
+import { EstimateResponse } from "./types/estimate";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [userId, setUserId] = useState("");
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    fetchEstimate({
+    const data: EstimateResponse = await fetchEstimate({
       customer_id: userId,
       origin: origin,
       destination: destination,
     });
+    if (data.options.length > 0) router.push("/selectdriver");
     // alert("Estimativa enviada! Confira os valores no console.");
   };
 
