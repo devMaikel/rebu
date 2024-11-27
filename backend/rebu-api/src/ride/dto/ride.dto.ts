@@ -9,6 +9,8 @@ export class RideEstimateDto {
 export class RideConfirmDto {
   customer_id: string;
 
+  date?: Date;
+
   origin: string;
 
   destination: string;

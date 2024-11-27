@@ -1,44 +1,44 @@
 #error-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Faz o conteúdo ocupar toda a altura da tela */
-    width: 100vw;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9; /* Fundo claro e sutil */
-    color: #333; /* Texto com cor neutra */
-  }
-  
-  #error-page h1 {
-    font-size: 4rem;
-    color: #e63946; /* Destaque vermelho suave */
-    margin-bottom: 1rem;
-  }
-  
-  #error-page p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    color: #555;
-  }
-  
-  #error-page i {
-    font-style: italic;
-    color: #555; /* Cor mais clara para o texto do erro */
-  }
-  
-  #error-page a {
-    margin-top: 2rem;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    background-color: #457b9d;
-    color: white;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  #error-page a:hover {
-    background-color: #1d3557; /* Fundo mais escuro ao passar o mouse */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+#error-page h1 {
+  font-size: 4rem;
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+#error-page p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+#error-page i {
+  font-style: italic;
+  color: #555;
+}
+
+#error-page a {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: #457b9d;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#error-page a:hover {
+  background-color: #1d3557;
+}

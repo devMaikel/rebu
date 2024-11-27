@@ -61,7 +61,6 @@
   background-color: #1d3557;
 }
 
-
 .ride-list-container {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -110,4 +109,11 @@
 
 .ride-table td {
   font-size: 1rem;
+}
+
+.historyDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }

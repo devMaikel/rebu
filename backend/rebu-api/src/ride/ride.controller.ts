@@ -49,7 +49,7 @@ export class RideController {
     );
 
     return {
-      serviceReturn,
+      ...serviceReturn,
     };
   }
 
@@ -62,6 +62,10 @@ export class RideController {
 
   @Patch('confirm')
   async confirm(@Body() ride: RideConfirmDto) {
+    const wrongDateTime = new Date();
+    ride.date = new Date(
+      wrongDateTime.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
+    );
     basicRidesValidade(ride);
     await this.rideService.confirm(ride);
     return {

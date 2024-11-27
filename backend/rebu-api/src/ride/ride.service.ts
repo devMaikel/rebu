@@ -70,6 +70,7 @@ export class RideService {
     }
     const rideToSave = this.rideRepository.create({
       customer_id: ride.customer_id,
+      date: ride.date,
       origin: ride.origin,
       destination: ride.destination,
       distance: ride.distance,
@@ -136,6 +137,7 @@ export class RideService {
         .select([
           'ride.id',
           'ride.customer_id',
+          'ride.date',
           'ride.origin',
           'ride.destination',
           'ride.distance',
@@ -168,6 +170,7 @@ export class RideService {
       .select([
         'ride.id',
         'ride.customer_id',
+        'ride.date',
         'ride.origin',
         'ride.destination',
         'ride.distance',

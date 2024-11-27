@@ -103,7 +103,7 @@ export interface EstimateResponse {
   distance: number;
   duration: string;
   options: Driver[];
-  routeResponse: unknown;
+  routeResponse: RouteResponse;
 }
 
 export interface RideBasicsData {
