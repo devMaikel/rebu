@@ -1,15 +1,15 @@
 services:
   frontend:
     container_name: app_front
-    build: ./frontend/rebu-front
+    build: ./frontend/rebu-frontend
     ports:
       - 80:80
     platform: linux/x86_64
     working_dir: /app-frontend
     environment:
       - API_BASE_URL=localhost:8080
-    volumes:
-      - ./frontend/rebu-front:/app-frontend
+    # volumes:
+    #   - ./frontend/rebu-frontend:/app-frontend
     depends_on:
       backend:
         condition: service_healthy
@@ -38,8 +38,8 @@ services:
       - DB_PORT=5432
       - DB_NAME=rebu
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
-    volumes:
-      - ./backend/rebu-api:/app-backend
+    # volumes:
+    #   - ./backend/rebu-api:/app-backend
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:8080"]
       timeout: 10s
